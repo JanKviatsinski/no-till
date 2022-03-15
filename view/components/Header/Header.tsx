@@ -7,7 +7,7 @@ import logo from '../../../public/logo.svg'
 
 export const Header = () =>
   <div className='bg-main text-secondT'>
-    <div className='container py-4 flex justify-between items-center'>
+    <div className='container py-3 flex justify-between items-center'>
       <Link href={'/'}>
         <div className='relative w-11 h-11 cursor-pointer'>
           <Image src={logo} layout='fill' alt='logo spica' />

@@ -4,13 +4,13 @@ hover:cursor-pointer
 flex
 relative
 before:content-""
-before:bg-third
+before:bg-alternate
 before:h-0.5
 before:w-7
 before:absolute
 before:rounded-md
 after:content-""
-after:bg-third
+after:bg-alternate
 after:h-0.5
 after:w-7
 after:absolute
@@ -23,7 +23,7 @@ w-7'
     <div className='
   self-center
   absolute
-  bg-third
+  bg-alternate
   w-7
   h-0.5
   rounded-md

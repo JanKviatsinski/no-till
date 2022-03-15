@@ -4,6 +4,6 @@ interface CommonContainerProps {
 }
 
 export const CommonContainer = ({ children, classes = '' }: CommonContainerProps) =>
-  <div className={`container flex justify-center py-12 ${classes}`}>
+  <div className={`container flex justify-center py-9 ${classes}`}>
     {children}
   </div>

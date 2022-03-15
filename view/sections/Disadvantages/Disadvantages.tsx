@@ -1,17 +1,17 @@
-import lessWorkForce from '../../../public/less-work-force.svg'
+import disadvantages from '../../../public/disadvantages.svg'
 import Image from 'next/image'
 import { CommonContainer } from '../../components/CommonContainer/CommonContainer'
 import { benefits } from './constants'
 
-export const Benefits = () => {
-  return <section className='bg-third'>
+export const Disadvantages = () => {
+  return <section className='bg-second'>
     <CommonContainer classes='text-mainT flex-col'>
       <h2 className='h2 mb-4 text-center'>
-        5 преимуществ
+        5 недостатков
       </h2>
       <div className='grid gap-4 grid-cols-1 md:grid-cols-2'>
-        <div className='w-full min-h-[16rem] relative'>
-          <Image src={lessWorkForce} layout='fill' alt='icon less work force' />
+        <div className='w-full min-h-[16rem] relative md:order-last'>
+          <Image src={disadvantages} layout='fill' alt='tractor in the mud' />
         </div>
         <ul className='text-center md:text-left'>
           {benefits.map(benefit =>
