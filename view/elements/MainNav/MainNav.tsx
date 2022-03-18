@@ -1,9 +1,18 @@
-import Link from 'next/link';
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
+import { routes } from '../../../routes'
 
-export const MainNav = () =>
-  <nav className='mr-4 items-center text-xs hidden md:flex'>
-    <Link href={'/'}><a className='mr-4'>Статьи</a></Link>
-    <Link href={'/'}><a className='mr-4'>Новости</a></Link>
-    <Link href={'/'}><a className='mr-4'>Эксперты</a></Link>
-    <Link href={'/'}><a className=''>Контакты</a></Link>
+export const MainNav = () => {
+  const { locale, defaultLocale } = useRouter()
+  useEffect(() => {
+    console.log(locale)
+  }, [locale])
+
+  return <nav className='items-center text-xs'>
+    <Link href={`/${routes.articles}`}><a className='mr-4'>Статьи</a></Link>
+    <Link href={`/${routes.news}`}><a className='mr-4'>Новости</a></Link>
+    <Link href={`/${routes.experts}`}><a className='mr-4'>Эксперты</a></Link>
+    <Link href={`/${routes.contacts}`}><a className=''>Контакты</a></Link>
   </nav>
+}

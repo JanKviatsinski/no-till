@@ -1,5 +1,11 @@
-export const ButtonBoorger = () =>
-  <div className='
+interface ButtonBoorgerProp {
+  //@ts-ignore
+  onClick: (e: MouseEvent<HTMLButtonElement, MouseEvent>) => void
+}
+
+export const ButtonBoorger = ({ onClick }: ButtonBoorgerProp) =>
+  <button onClick={(e) => onClick(e)}>
+    <div className='
 hover:cursor-pointer
 flex
 relative
@@ -19,8 +25,8 @@ after:left-0
 after:rounded-md
 h-7
 w-7'
-  >
-    <div className='
+    >
+      <div className='
   self-center
   absolute
   bg-alternate
@@ -28,4 +34,5 @@ w-7'
   h-0.5
   rounded-md
   '></div>
-  </div>
+    </div>
+  </button>
