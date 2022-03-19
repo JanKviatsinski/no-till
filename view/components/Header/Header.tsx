@@ -6,23 +6,19 @@ import { MobNav } from '../../elements/MobNav/MobNav'
 import { MuiSelect } from '../../elements/MuiSelect'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
-
-import en from '../../../localesC/en.js'
-import ru from '../../../localesC/ru.js'
+import { getTranslate } from '../../../utils/getTranslate'
 
 export const Header = () => {
-  const router = useRouter()
-  const { locale } = useRouter()
+  const { locale, push, asPath } = useRouter()
   const [language, setLanguage1] = useState(locale)
-  const t = locale === 'en' ? en : ru
+  const t = getTranslate()
+
   useEffect(() => {
     const date = new Date()
-    const expireMs = 100 * 24 * 60 * 60 * 1000 // 100 days
+    const expireMs = 100 * 24 * 60 * 60 * 1000
     date.setTime(date.getTime() + expireMs)
     document.cookie = `NEXT_LOCALE=${language};expires=${date.toUTCString()};path=/`
-    // setLanguage(language)
-    console.log(document.cookie)
-    router.push(router.asPath, router.asPath, { locale: language })
+    push(asPath, asPath, { locale: language })
   }, [language])
 
   return <div className='bg-main text-secondT'>

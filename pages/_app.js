@@ -43,8 +43,6 @@ const theme = createTheme({
 })
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
-  // document.cookie = `NEXT_LOCALE=${locale};expires=${date.toUTCString()};path=/`
-  // console.log(document.cookie)
   return <ThemeProvider theme={theme}>
     <Component {...pageProps} />
   </ThemeProvider>
